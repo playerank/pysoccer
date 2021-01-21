@@ -1,0 +1,814 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  
+  <title>pysoccer.serializers.WyscoutSerializer package &mdash; pysoccer 1.0.0 documentation</title>
+  
+
+  
+  <link rel="stylesheet" href="_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+
+  
+  
+
+  
+  
+
+  
+
+  
+  <!--[if lt IE 9]>
+    <script src="_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+        <script src="_static/jquery.js"></script>
+        <script src="_static/underscore.js"></script>
+        <script src="_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="_static/js/theme.js"></script>
+
+    
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="pysoccer.serializers package" href="pysoccer.serializers.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="index.html" class="icon icon-home"> pysoccer
+          
+
+          
+          </a>
+
+          
+            
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">Contents:</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pysoccer</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="pysoccer.html">pysoccer package</a><ul class="current">
+<li class="toctree-l3 current"><a class="reference internal" href="pysoccer.html#subpackages">Subpackages</a><ul class="current">
+<li class="toctree-l4"><a class="reference internal" href="pysoccer.algorithms.html">pysoccer.algorithms package</a></li>
+<li class="toctree-l4 current"><a class="reference internal" href="pysoccer.serializers.html">pysoccer.serializers package</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="pysoccer.html#submodules">Submodules</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pysoccer.html#module-pysoccer.attributes">pysoccer.attributes module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pysoccer.html#module-pysoccer.base">pysoccer.base module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pysoccer.html#module-pysoccer.event">pysoccer.event module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pysoccer.html#module-pysoccer.match">pysoccer.match module</a></li>
+<li class="toctree-l3"><a class="reference internal" href="pysoccer.html#module-pysoccer">Module contents</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+        
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="index.html">pysoccer</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
+        
+          <li><a href="modules.html">pysoccer</a> &raquo;</li>
+        
+          <li><a href="pysoccer.html">pysoccer package</a> &raquo;</li>
+        
+          <li><a href="pysoccer.serializers.html">pysoccer.serializers package</a> &raquo;</li>
+        
+      <li>pysoccer.serializers.WyscoutSerializer package</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="_sources/pysoccer.serializers.WyscoutSerializer.rst.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="pysoccer-serializers-wyscoutserializer-package">
+<h1>pysoccer.serializers.WyscoutSerializer package<a class="headerlink" href="#pysoccer-serializers-wyscoutserializer-package" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="submodules">
+<h2>Submodules<a class="headerlink" href="#submodules" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pysoccer.serializers.WyscoutSerializer.eventSerializer">
+<span id="pysoccer-serializers-wyscoutserializer-eventserializer-module"></span><h2>pysoccer.serializers.WyscoutSerializer.eventSerializer module<a class="headerlink" href="#module-pysoccer.serializers.WyscoutSerializer.eventSerializer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.eventSerializer.</code><code class="sig-name descname">WyscoutEventSerializer</code><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pysoccer.html#pysoccer.base.EventSerializer" title="pysoccer.base.EventSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pysoccer.base.EventSerializer</span></code></a></p>
+<p>Class that implements a serializer for Wyscout events.</p>
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_challenged_player">
+<code class="sig-name descname">get_challenged_player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">index</span></em>, <em class="sig-param"><span class="n">events</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_challenged_player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that computes the callenged player in a duel event.
+It search for a corresponding duel event. If there isn’t it search for
+the closest opponent team’s event and assume the player involved in that event
+as the callenged one.
+Separate if clause are needed to accurately separe the cases.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>index</strong> – index of the duel event</p></li>
+<li><p><strong>events</strong> – list containing the match’s events</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the challenged player if there’s one, None otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_goal_position">
+<code class="sig-name descname">get_goal_position</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_goal_position" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that calculate where a shot ended.
+The goal is divided in a 3x3 with the zones named .
+Then there is a zone over the bar and two on the sides of the posts.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> – shot event that the function computes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the position where the shot ended</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_label">
+<code class="sig-name descname">get_label</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">tags</span></em>, <em class="sig-param"><span class="n">outcome</span></em><span class="sig-paren">)</span> &#x2192; str<a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_label" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that computes the event label.
+It append the event name to the sub event name separated by a minus.
+Then in the same way it appends the event’s tag names.
+Finally the event’s outcome is appended.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> – the event we’re creating the label for</p></li>
+<li><p><strong>tags</strong> – the event’s tags</p></li>
+<li><p><strong>outcome</strong> – the event’s outcome</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_outcome">
+<code class="sig-name descname">get_outcome</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">events</span></em>, <em class="sig-param"><span class="n">curr_phase</span></em>, <em class="sig-param"><span class="n">next_phase</span></em>, <em class="sig-param"><span class="n">tags</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_outcome" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fuction that computes the outcome of an event.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> – event whose outcome is beign computed</p></li>
+<li><p><strong>events</strong> – list containing the match’s events</p></li>
+<li><p><strong>phases</strong> – list containing the possession phases</p></li>
+<li><p><strong>tags</strong> – list containing the event’s tags</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the outcome of the event</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_receiver">
+<code class="sig-name descname">get_receiver</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">tags</span></em>, <em class="sig-param"><span class="n">events</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_receiver" title="Permalink to this definition">¶</a></dt>
+<dd><p>Fuction that calculates the receiver of a pass.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> – pass event whose receiver is beign calculated</p></li>
+<li><p><strong>tags</strong> – list containing the event’s tags</p></li>
+<li><p><strong>events</strong> – list containing the match’s events</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the receiver if the pass was accurate, None otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_team_possession_time">
+<code class="sig-name descname">get_team_possession_time</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">events</span><span class="p">:</span> <span class="n">List</span></em>, <em class="sig-param"><span class="n">team</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; float<a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.get_team_possession_time" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that computes the possession time of a single team</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>events</strong> – the list of events</p></li>
+<li><p><strong>team</strong> – the team whose possession is computed</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the minutes of possession</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.serialize">
+<code class="sig-name descname">serialize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">input</span><span class="p">:</span> <span class="n">List</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.eventSerializer.WyscoutEventSerializer.serialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serializer that convert a list of Wyscout events in a list of standardized events.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>input</strong> – list containing the Wyscout events</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>list containing the standardized events</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysoccer.serializers.WyscoutSerializer.matchSerializer">
+<span id="pysoccer-serializers-wyscoutserializer-matchserializer-module"></span><h2>pysoccer.serializers.WyscoutSerializer.matchSerializer module<a class="headerlink" href="#module-pysoccer.serializers.WyscoutSerializer.matchSerializer" title="Permalink to this headline">¶</a></h2>
+<dl class="py class">
+<dt id="pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer">
+<em class="property">class </em><code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.matchSerializer.</code><code class="sig-name descname">WyscoutMatchSerializer</code><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer" title="Permalink to this definition">¶</a></dt>
+<dd><p>Bases: <a class="reference internal" href="pysoccer.html#pysoccer.base.MatchSerializer" title="pysoccer.base.MatchSerializer"><code class="xref py py-class docutils literal notranslate"><span class="pre">pysoccer.base.MatchSerializer</span></code></a></p>
+<p>Class that implements the match serializer for Wyscout matches.</p>
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_formation">
+<code class="sig-name descname">get_formation</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="pysoccer.html#pysoccer.attributes.Formation" title="pysoccer.attributes.Formation">pysoccer.attributes.Formation</a><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_formation" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that initializes a Formation object contaning a team’s
+formation attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>match</strong> – a dictionary containing the match’s attributes</p></li>
+<li><p><strong>id</strong> – the team’s id</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Formation object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_match_attributes">
+<code class="sig-name descname">get_match_attributes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match</span><span class="p">:</span> <span class="n">dict</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_match_attributes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that computes the additional attributes of a match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>match</strong> – a dictionary containing the match’s attributes</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of dictionary containing the attributes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_played_minutes">
+<code class="sig-name descname">get_played_minutes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">str</span></em>, <em class="sig-param"><span class="n">player_id</span><span class="p">:</span> <span class="n">int</span></em><span class="sig-paren">)</span> &#x2192; int<a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_played_minutes" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that computes a player’s played minutes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>match</strong> – the played match</p></li>
+<li><p><strong>id</strong> – the player’s team id</p></li>
+<li><p><strong>player_id</strong> – the player’s id</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>the played minutes</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_player">
+<code class="sig-name descname">get_player</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">match</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="pysoccer.html#pysoccer.attributes.Player" title="pysoccer.attributes.Player">pysoccer.attributes.Player</a><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_player" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that initializes a Player object containing a player’s attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>player</strong> – a dictionary containing the player’s attributes</p></li>
+<li><p><strong>match</strong> – a dictionary containing the match’s attributes</p></li>
+<li><p><strong>id</strong> – the player’s team id</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Player object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_substitutions">
+<code class="sig-name descname">get_substitutions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_substitutions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that computes the substitions made during the match.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>match</strong> – a dictionary containing the match’s attributes</p></li>
+<li><p><strong>id</strong> – the team’s id</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list of substitutions</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_team_data">
+<code class="sig-name descname">get_team_data</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match</span><span class="p">:</span> <span class="n">dict</span></em>, <em class="sig-param"><span class="n">id</span><span class="p">:</span> <span class="n">str</span></em><span class="sig-paren">)</span> &#x2192; <a class="reference internal" href="pysoccer.html#pysoccer.attributes.Team" title="pysoccer.attributes.Team">pysoccer.attributes.Team</a><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.get_team_data" title="Permalink to this definition">¶</a></dt>
+<dd><p>Function that initializes a Team object containing a team’s attributes.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>match</strong> – a dictionary containing the match’s attributes</p></li>
+<li><p><strong>id</strong> – the team’s id</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a Team object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py method">
+<dt id="pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.serialize">
+<code class="sig-name descname">serialize</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">match</span><span class="p">:</span> <span class="n">List</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.matchSerializer.WyscoutMatchSerializer.serialize" title="Permalink to this definition">¶</a></dt>
+<dd><p>Serializer that converts a list of Wyscout matches in a list of standardized match objects.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>match</strong> – a list containing the Wyscout matches</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>a list containing the standardized events</p>
+</dd>
+</dl>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysoccer.serializers.WyscoutSerializer.phaseDetection">
+<span id="pysoccer-serializers-wyscoutserializer-phasedetection-module"></span><h2>pysoccer.serializers.WyscoutSerializer.phaseDetection module<a class="headerlink" href="#module-pysoccer.serializers.WyscoutSerializer.phaseDetection" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.get_period_offset">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">get_period_offset</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.get_period_offset" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.get_play_actions">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">get_play_actions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.get_play_actions" title="Permalink to this definition">¶</a></dt>
+<dd><p>Given a list of events of a single match,
+it splits the events
+into possession phases using the following principle:
+- an action begins when a team gains ball possession
+- an action ends if one of two cases occurs:
+– there is interruption of the match, due to: 1) end of first half or match; 2) ball
+out of the field 3) offside 4) foul
+– ball is played by the opposite team w.r.t. to the team who is owning the ball</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>a list, where each item is a tuple including:
+- event outcome: ball lost | shot | interruption | penalty
+- phase events list</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.get_tag_list">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">get_tag_list</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.get_tag_list" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_accurate_pass">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_accurate_pass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_accurate_pass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_ball_lost">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_ball_lost</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">previous_event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_ball_lost" title="Permalink to this definition">¶</a></dt>
+<dd><p>note: not considering touch and cleareance as possession event</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_duel">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_duel</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_duel" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_goal">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_goal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_goal" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check if it is a goal or own goal. To detect sudden goal form not usual event types (touches acceleration whatever)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_interruption">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_interruption</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em>, <em class="sig-param"><span class="n">current_half</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_interruption" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify whether or not an event is a game interruption. A game interruption can be due to
+a ball our of the field, a whistle by the referee, a fouls, an offside, a goal, the end of the
+first half or the end of the game.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>event</strong> – dict
+a dictionary describing the event</p></li>
+<li><p><strong>current_half</strong> – str
+the current half of the match (1H = first half, 2H == second half)</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True is the event is an interruption, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_other">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_other</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_other" title="Permalink to this definition">¶</a></dt>
+<dd><p>Check for cleareance and touches</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_pass">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_pass</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_pass" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_penalty">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_penalty</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_penalty" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_reflexes">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_reflexes</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_reflexes" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_save_attempt">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_save_attempt</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_save_attempt" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_shot">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_shot</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_shot" title="Permalink to this definition">¶</a></dt>
+<dd><p>Verify whether or not the event is a shot. Sometimes, a play action can continue
+after a shot if the team gains again the ball. We account for this case by looking
+at the next events of the game.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>event</strong> – dict
+a dictionary describing the event</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>True is the event is a shot, False otherwise</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_touch">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_touch</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_touch" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.pre_process">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">pre_process</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">events</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.pre_process" title="Permalink to this definition">¶</a></dt>
+<dd><p>Duels appear in pairs in the streamflow: one event is by a team and the other by
+the opposing team. This can create</p>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysoccer.serializers.WyscoutSerializer.phaseFeatures">
+<span id="pysoccer-serializers-wyscoutserializer-phasefeatures-module"></span><h2>pysoccer.serializers.WyscoutSerializer.phaseFeatures module<a class="headerlink" href="#module-pysoccer.serializers.WyscoutSerializer.phaseFeatures" title="Permalink to this headline">¶</a></h2>
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.cleareances">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">cleareances</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.cleareances" title="Permalink to this definition">¶</a></dt>
+<dd><p>cleareances: n. of clearances</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.compute_shot_features">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">compute_shot_features</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.compute_shot_features" title="Permalink to this definition">¶</a></dt>
+<dd><p>it computes the features of a shot / free kick event, for xg computation</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.create_xg_model">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">create_xg_model</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">events_list</span></em>, <em class="sig-param"><span class="n">matches</span></em>, <em class="sig-param"><span class="n">tree_fname</span><span class="o">=</span><span class="default_value">'xg_model.joblib'</span></em>, <em class="sig-param"><span class="n">encoder_fname</span><span class="o">=</span><span class="default_value">'label_encoder.joblib'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.create_xg_model" title="Permalink to this definition">¶</a></dt>
+<dd><p>creation of a sklearn model</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.d">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">stop</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.d" title="Permalink to this definition">¶</a></dt>
+<dd><p>angular distance difference between start ant stop events
+we consider first position as event position</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>start</strong> – event positions</p></li>
+<li><p><strong>stop</strong> – event positions</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.duels">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">duels</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.duels" title="Permalink to this definition">¶</a></dt>
+<dd><p>duels on 1st third: n. of passess conceded with origin x in [66,100]
+duels on 2nd third: n. of passess conceded with origin x in [33,66]
+duels on 3d third: n. of passess conceded with origin x in [0,33]</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.duels_count">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">duels_count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.duels_count" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.duration">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">duration</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.duration" title="Permalink to this definition">¶</a></dt>
+<dd><p>duration of possessing events</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.expected_goals">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">expected_goals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">label_encoder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.expected_goals" title="Permalink to this definition">¶</a></dt>
+<dd><p>computing expected goals for a phase according to input model</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phase</strong> – phase object, tuple</p></li>
+<li><p><strong>model</strong> – sklearn model</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.fouls">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">fouls</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.fouls" title="Permalink to this definition">¶</a></dt>
+<dd><p>fouls: n. of fouls</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.goal_count">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">goal_count</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.goal_count" title="Permalink to this definition">¶</a></dt>
+<dd><p>it counts the number of goals in a phase, excluding save attempts events (eventId = 9)</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.invasion">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">invasion</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.invasion" title="Permalink to this definition">¶</a></dt>
+<dd><p>it computes the invasion of each possesion phase
+invasion index is the maximum closeness, across a possession phase, between the ball and opponents goal.
+it is the closest point, w.r.t. opponents goal, where the possessing team manages to bring the ball</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.last_ball_location">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">last_ball_location</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shot</span></em>, <em class="sig-param"><span class="n">prev_events</span></em>, <em class="sig-param"><span class="n">time_window</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.last_ball_location" title="Permalink to this definition">¶</a></dt>
+<dd><p>it computes the average distance from shots location to previous &lt;time_window&gt; events.
+it could be useful to distinguish among high and low pressure situation</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>shot</strong> – a shot event</p></li>
+<li><p><strong>prev_Events</strong> – a list of previous events</p></li>
+<li><p><strong>time_window</strong> – previous time window to consider (in seconds)</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.pass_length">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">pass_length</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.pass_length" title="Permalink to this definition">¶</a></dt>
+<dd><p>average lenght of all the passes within the phase</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.passes_direction">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">passes_direction</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.passes_direction" title="Permalink to this definition">¶</a></dt>
+<dd><p>counting forward, lateral and back passes</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.phase_wideness">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">phase_wideness</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.phase_wideness" title="Permalink to this definition">¶</a></dt>
+<dd><p>average and std y of each ball position to asses pitch usage on y dimension</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.players_involved">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">players_involved</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.players_involved" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the players involved in each phase</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.possessing_team">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">possessing_team</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.possessing_team" title="Permalink to this definition">¶</a></dt>
+<dd><p>returns the possessing team of the phase</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.shots">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">shots</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.shots" title="Permalink to this definition">¶</a></dt>
+<dd><p>shots: n. of shots conceded</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.shots_distance">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">shots_distance</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.shots_distance" title="Permalink to this definition">¶</a></dt>
+<dd></dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.space_gain">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">space_gain</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.space_gain" title="Permalink to this definition">¶</a></dt>
+<dd><p>it computes space gained between start and stop of the phase. It returns the gain and the final position of the phase</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.space_gain_speed">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">space_gain_speed</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.space_gain_speed" title="Permalink to this definition">¶</a></dt>
+<dd><p>it computes space gained between start and tertile_i of the phase.
+It returns the speed in this segment of the phase.
+Segments are computed according to the duration</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.speed_step">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">speed_step</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.speed_step" title="Permalink to this definition">¶</a></dt>
+<dd><p>it computes the space gain speed for each step of the phase. For each step (pass etc) it computes relative space gain / elapsed time</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.start_x">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">start_x</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.start_x" title="Permalink to this definition">¶</a></dt>
+<dd><p>return starting x position of the possesion phase</p>
+</dd></dl>
+
+<dl class="py function">
+<dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.timestamp">
+<code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">timestamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em>, <em class="sig-param"><span class="n">offset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.timestamp" title="Permalink to this definition">¶</a></dt>
+<dd><p>return the absolute timestamp of the first event of the phase</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>phase</strong> – a list of events corresponding to a possesion phase</p></li>
+<li><p><strong>offest</strong> – dictionary with offset for each period of the match</p></li>
+</ul>
+</dd>
+</dl>
+</dd></dl>
+
+</div>
+<div class="section" id="module-pysoccer.serializers.WyscoutSerializer.wyscoutAttributes">
+<span id="pysoccer-serializers-wyscoutserializer-wyscoutattributes-module"></span><h2>pysoccer.serializers.WyscoutSerializer.wyscoutAttributes module<a class="headerlink" href="#module-pysoccer.serializers.WyscoutSerializer.wyscoutAttributes" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="module-pysoccer.serializers.WyscoutSerializer">
+<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-pysoccer.serializers.WyscoutSerializer" title="Permalink to this headline">¶</a></h2>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+        <a href="pysoccer.serializers.html" class="btn btn-neutral float-left" title="pysoccer.serializers package" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &#169; Copyright 2021, Marco Telleschi.
+
+    </p>
+  </div>
+    
+    
+    
+    Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    
+    provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>
