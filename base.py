@@ -1,6 +1,7 @@
 from abc import ABC, abstractmethod
 from typing import List
-from .event import Event
+
+from pysoccer.event import Event
 
 class EventSerializer(ABC):
     """

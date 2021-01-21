@@ -1,5 +1,6 @@
-from pysoccer.attributes import Team
 from dataclasses import dataclass
+
+from pysoccer.attributes import Team
 
 
 @dataclass

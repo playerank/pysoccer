@@ -1,6 +1,7 @@
 from typing import List
-from .attributes import Point, ResultType
 from dataclasses import dataclass
+
+from pysoccer.attributes import Point, ResultType
 
 @dataclass
 class Event():
