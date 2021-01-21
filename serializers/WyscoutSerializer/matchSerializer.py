@@ -1,7 +1,8 @@
+from typing import List
+
 from pysoccer.match import Match
 from pysoccer.attributes import Player, Formation, Substitution, Team
 from pysoccer.base import MatchSerializer
-from typing import List
 
 class WyscoutMatchSerializer(MatchSerializer):
     """

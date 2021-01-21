@@ -1,14 +1,15 @@
-from .abstract import Aggregation
-from .wyscoutEventsDefinition import *
+from pysoccer.algorithms.playerank.features.abstract import Aggregation
+from pysoccer.algorithms.playerank.features.wyscoutEventsDefinition import *
 import json
 import pandas as pd
 from collections import defaultdict
 
 class relativeAggregation(Aggregation):
     """
-    compute relative feature for each match
+    Compute relative feature for each match
     match -> team (or entity) -> featureTeam - featureOpponents
     """
+
     def set_features(self,collection_list):
         self.collections=collection_list
 
@@ -16,19 +17,14 @@ class relativeAggregation(Aggregation):
         return self.collections
     def aggregate(self,to_dataframe = False):
         """
-        compute relative aggregation: give a set of features it compute the A-B
-        value for each entity in each team.
+        Compute relative aggregation: give a set of features it compute the A-Bvalue for each entity in each team.
         Ex:
         passes for team A in match 111 : 500
         passes for team B in match 111 : 300
-        lead to output:
-        {'passes': 200}
+        lead to output: {'passes': 200}
+        This method is involved for feature weight estimation phase of playerank framework.
 
-        this method is involved for feature weight estimation phase of playerank framework.
-        param
-
-        - to_dataframe : return a dataframe instead of a list of documents
-
+        :param to_dataframe : return a dataframe instead of a list of documents
         """
 
         featdata = []

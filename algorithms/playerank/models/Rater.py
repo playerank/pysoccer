@@ -6,18 +6,17 @@ from sklearn.preprocessing import MinMaxScaler
 
 class Rater():
     """Performance rating
+    
+    Attributes:
 
-    Parameters
-    ----------
-    alpha_goal: float
+    ratings_ : numpy array
+        the ratings of the performances
+
+    :param alpha_goal: float
         importance of the goal in the evaluation of performance, in the range [0, 1]
         default=0.0
-
-    Attributes
-    ----------
-    ratings_: numpy array
-        the ratings of the performances
     """
+
     def __init__(self, alpha_goal=0.0):
         self.alpha_goal = alpha_goal
         self.ratings_ = []
@@ -28,18 +27,14 @@ class Rater():
     def predict(self, dataframe, goal_feature, score_feature, filename='ratings'):
         """
         Compute the rating of each performance in X
+        
+        :param dataframe: dataframe of playerank scores
+        :param goal_feature: column name for goal scored dataframe column
+        :param score_feature: column name for playerank score dataframe column
 
-        Parameters
-        ----------
-        dataframe: dataframe of playerank scores
-        goal_feature: column name for goal scored dataframe column
-        score_feature: column name for playerank score dataframe column
-
-
-        Returns
-        -------
-        ratings_: numpy array
+        :return: ratings_: numpy array
         """
+
         feature_names = dataframe.columns
         X = dataframe.values
 

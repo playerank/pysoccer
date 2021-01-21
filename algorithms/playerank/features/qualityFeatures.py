@@ -1,5 +1,5 @@
-from .abstract import Feature
-from .wyscoutEventsDefinition import *
+from pysoccer.algorithms.playerank.features.abstract import Feature
+from pysoccer.algorithms.playerank.features.wyscoutEventsDefinition import *
 import json
 from collections import defaultdict
 import glob
@@ -17,14 +17,13 @@ class qualityFeatures(Feature):
     """
     def createFeature(self,serialized_events,players_file,entity = 'team',select = None):
         """
-        compute qualityFeatures
-        parameters:
-        -serialized_events: file path of events file
-        -select: function  for filtering events collection. Default: aggregate over all events
-        -entity: it could either 'team' or 'player'. It selects the aggregation for qualityFeatures among teams or players qualityfeatures
+        Compute qualityFeatures
+        
+        :param serialized_events: file path of events file
+        :param select: function  for filtering events collection. Default: aggregate over all events
+        :param entity: it could either 'team' or 'player'. It selects the aggregation for qualityFeatures among teams or players qualityfeatures
 
-        Output:
-        list of dictionaries in the format: matchId -> entity -> feature -> value
+        :return: list of dictionaries in the format: matchId -> entity -> feature -> value
         """
 
         aggregated_features = defaultdict(lambda : defaultdict(lambda: defaultdict(int)))

@@ -1,4 +1,5 @@
 from typing import List
+
 from pysoccer.event import *
 from pysoccer.attributes import *
 from pysoccer.base import EventSerializer

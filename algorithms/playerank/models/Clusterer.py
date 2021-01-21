@@ -30,58 +30,45 @@ def scalable_silhouette_score(X, labels, metric='euclidean', sample_size=None,
     Compute the mean Silhouette Coefficient of all samples.
     The Silhouette Coefficient is compute using the mean intra-cluster distance (a)
     and the mean nearest-cluster distance (b) for each sample.
-
     The Silhouette Coefficient for a sample is $(b - a) / max(a, b)$.
     To clarify, b is the distance between a sample and the nearest cluster
     that b is not a part of.
-
     This function returns the mean Silhoeutte Coefficient over all samples.
     To obtain the values for each sample, it uses silhouette_samples.
-
     The best value is 1 and the worst value is -1. Values near 0 indicate
     overlapping clusters. Negative values generally indicate that a sample has
     been assigned to the wrong cluster, as a different cluster is more similar.
 
-    Parameters
-    ----------
-    X : array [n_samples_a, n_features]
+    :param X: array [n_samples_a, n_features]
         the Feature array.
-
-    labels : array, shape = [n_samples]
+    :param labels: array, shape = [n_samples]
         label values for each sample
-
-    metric : string, or callable
+    :param metric: string, or callable
         The metric to use when calculating distance between instances in a
         feature array. If metric is a string, it must be one of the options
         allowed by metrics.pairwise.pairwise_distances. If X is the distance
         array itself, use "precomputed" as the metric.
-
-    sample_size : int or None
+    :param sample_size: int or None
         The size of the sample to use when computing the Silhouette
         Coefficient. If sample_size is None, no sampling is used.
-
-    random_state : integer or numpy.RandomState, optional
+    :param random_state: integer or numpy.RandomState, optional
         The generator used to initialize the centers. If an integer is
         given, it fixes the seed. Defaults to the global numpy random
         number generator.
-
-    **kwds : optional keyword parameters
+    :param \**kwds: optional keyword parameters
         Any further parameters are passed directly to the distance function.
         If using a scipy.spatial.distance metric, the parameters are still
         metric dependent. See the scipy docs for usage examples.
-
-    Returns
-    -------
-    silhouette : float
+    :return: silhouette: float
         the Mean Silhouette Coefficient for all samples.
 
-    References
-    ----------
+    References 
     Peter J. Rousseeuw (1987). "Silhouettes: a Graphical Aid to the
-        Interpretation and Validation of Cluster Analysis". Computational
-        and Applied Mathematics 20: 53-65. doi:10.1016/0377-0427(87)90125-7.
+    Interpretation and Validation of Cluster Analysis". Computational
+    and Applied Mathematics 20: 53-65. doi:10.1016/0377-0427(87)90125-7.
     http://en.wikipedia.org/wiki/Silhouette_(clustering)
     """
+
     if sample_size is not None:
         random_state = check_random_state(random_state)
         indices = random_state.permutation(X.shape[0])[:sample_size]
@@ -101,46 +88,36 @@ def scalable_silhouette_samples(X, labels, metric='euclidean', n_jobs=1, **kwds)
     Clustering models with a high Silhouette Coefficient are said to be dense,
     where samples in the same cluster are similar to each other, and well separated,
     where samples in different clusters are not very similar to each other.
-
     The Silhouette Coefficient is calculated using the mean intra-cluster
     distance (a) and the mean nearest-cluster distance (b) for each sample.
-
     The Silhouette Coefficient for a sample is $(b - a) / max(a, b)$.
     This function returns the Silhoeutte Coefficient for each sample.
     The best value is 1 and the worst value is -1. Values near 0 indicate
     overlapping clusters.
 
-    Parameters
-    ----------
-    X : array [n_samples_a, n_features]
+    :param X: array [n_samples_a, n_features]
         Feature array.
-
-    labels : array, shape = [n_samples]
+    :param labels: array, shape = [n_samples]
         label values for each sample
-
-    metric : string, or callable
+    :param metric: string, or callable
         The metric to use when calculating distance between instances in a
         feature array. If metric is a string, it must be one of the options
         allowed by metrics.pairwise.pairwise_distances. If X is the distance
         array itself, use "precomputed" as the metric.
-
-    **kwds : optional keyword parameters
+    :param \**kwds: optional keyword parameters
         Any further parameters are passed directly to the distance function.
         If using a scipy.spatial.distance metric, the parameters are still
         metric dependent. See the scipy docs for usage examples.
-
-    Returns
-    -------
-    silhouette : array, shape = [n_samples]
+    :return: silhouette : array, shape = [n_samples]
         Silhouette Coefficient for each samples.
 
     References
-    ----------
     Peter J. Rousseeuw (1987). "Silhouettes: a Graphical Aid to the
-        Interpretation and Validation of Cluster Analysis". Computational
-        and Applied Mathematics 20: 53-65. doi:10.1016/0377-0427(87)90125-7.
+    Interpretation and Validation of Cluster Analysis". Computational
+    and Applied Mathematics 20: 53-65. doi:10.1016/0377-0427(87)90125-7.
     http://en.wikipedia.org/wiki/Silhouette_(clustering)
     """
+
     A = _intra_cluster_distances_block(X, labels, metric, n_jobs=n_jobs,
                                        **kwds)
     B = _nearest_cluster_distance_block(X, labels, metric, n_jobs=n_jobs,
@@ -153,30 +130,23 @@ def _intra_cluster_distances_block(X, labels, metric, n_jobs=1, **kwds):
     """
     Calculate the mean intra-cluster distance for sample i.
 
-    Parameters
-    ----------
-    X : array [n_samples_a, n_features]
+    :param X: array [n_samples_a, n_features]
         Feature array.
-
-    labels : array, shape = [n_samples]
+    :param labels: array, shape = [n_samples]
         label values for each sample
-
-    metric : string, or callable
+    :param metric: string, or callable
         The metric to use when calculating distance between instances in a
         feature array. If metric is a string, it must be one of the options
         allowed by metrics.pairwise.pairwise_distances. If X is the distance
         array itself, use "precomputed" as the metric.
-
-    **kwds : optional keyword parameters
+    :param **kwds: optional keyword parameters
         Any further parameters are passed directly to the distance function.
         If using a scipy.spatial.distance metric, the parameters are still
         metric dependent. See the scipy docs for usage examples.
-
-    Returns
-    -------
-    a : array [n_samples_a]
+    :return: a: array [n_samples_a]
         Mean intra-cluster distance
     """
+
     intra_dist = np.zeros(labels.size, dtype=float)
     values = Parallel(n_jobs=n_jobs)(
             delayed(_intra_cluster_distances_block_)
@@ -190,33 +160,25 @@ def _intra_cluster_distances_block(X, labels, metric, n_jobs=1, **kwds):
 def _nearest_cluster_distance_block(X, labels, metric, n_jobs=1, **kwds):
     """Calculate the mean nearest-cluster distance for sample i.
 
-    Parameters
-    ----------
-    X : array [n_samples_a, n_features]
+    :param X: array [n_samples_a, n_features]
         Feature array.
-
-    labels : array, shape = [n_samples]
+    :param labels: array, shape = [n_samples]
         label values for each sample
-
-    metric : string, or callable
+    :param metric: string, or callable
         The metric to use when calculating distance between instances in a
         feature array. If metric is a string, it must be one of the options
         allowed by metrics.pairwise.pairwise_distances. If X is the distance
         array itself, use "precomputed" as the metric.
-
-    **kwds : optional keyword parameters
+    :param **kwds: optional keyword parameters
         Any further parameters are passed directly to the distance function.
         If using a scipy.spatial.distance metric, the parameters are still
         metric dependent. See the scipy docs for usage examples.
-
-    X : array [n_samples_a, n_features]
+    :param X: array [n_samples_a, n_features]
         Feature array.
-
-    Returns
-    -------
-    b : float
+    :return: b: float
         Mean nearest-cluster distance for sample i
     """
+
     inter_dist = np.empty(labels.size, dtype=float)
     inter_dist.fill(np.inf)
     # Compute cluster distance between pairs of clusters
@@ -253,56 +215,50 @@ def _nearest_cluster_distance_block_(subX_a, subX_b, metric, **kwds):
 class Clusterer(BaseEstimator, ClusterMixin):
     """Performance clustering
 
-    Parameters
-    ----------
-    k_range: tuple (pair)
-        the minimum and the maximum $k$ to try when choosing the best value of $k$
-        (the one having the best silhouette score)
+    Attributes:
 
-    border_threshold: float
-        the threshold to use for selecting the borderline.
-        It indicates the max silhouette for a borderline point.
-
-    verbose: boolean
-        verbosity mode.
-        default: False
-
+    cluster_centers_ : array, [n_clusters, n_features]
+        Coordinates of cluster centers
+    n_clusters_ : int
+        number of clusters found by the algorithm
+    labels_
+        Labels of each point
+    k_range : tuple
+        minimum and maximum number of clusters to try
+    verbose : boolean
+        whether or not to show details of the execution
     random_state : int
         RandomState instance or None, optional, default: None
         If int, random_state is the seed used by the random number generator;
         If RandomState instance, random_state is the random number generator;
         If None, the random number generator is the RandomState instance used
-        by `np.random`.
+        by 'np.random'.
+    sample_size
+        None
+    kmeans :  scikit-learn KMeans object
+        None
 
-    sample_size : int
-        the number of samples (rows) that must be used when computing the silhouette score (the function silhouette_score is computationally expensive and generates a Memory Error when the number of samples is too high)
-        default: 10000
-
-    max_rows : int
-        the maximum number of samples (rows) to be considered for the clustering task (the function silhouette_samples is computationally expensive and generates a Memory Error when the input matrix have too many rows)
-        default: 40000
-
-
-    Attributes
-    ----------
-    cluster_centers_ : array, [n_clusters, n_features]
-        Coordinates of cluster centers
-    n_clusters_: int
-        number of clusters found by the algorithm
-    labels_ :
-        Labels of each point
-    k_range: tuple
-        minimum and maximum number of clusters to try
-    verbose: boolean
-        whether or not to show details of the execution
-    random_state: int
+    :param k_range: tuple (pair)
+        the minimum and the maximum $k$ to try when choosing the best value of $k$
+        (the one having the best silhouette score)
+    :param border_threshold: float
+        the threshold to use for selecting the borderline.
+        It indicates the max silhouette for a borderline point.
+    :param verbose: boolean
+        verbosity mode.
+        default: False
+    :param random_state: int
         RandomState instance or None, optional, default: None
         If int, random_state is the seed used by the random number generator;
         If RandomState instance, random_state is the random number generator;
         If None, the random number generator is the RandomState instance used
-        by 'np.random'.
-    sample_size: None
-    kmeans: scikit-learn KMeans object
+        by `np.random`.
+    :param sample_size: int
+        the number of samples (rows) that must be used when computing the silhouette score (the function silhouette_score is computationally expensive and generates a Memory Error when the number of samples is too high)
+        default: 10000
+    :param max_rows: int
+        the maximum number of samples (rows) to be considered for the clustering task (the function silhouette_samples is computationally expensive and generates a Memory Error when the input matrix have too many rows)
+        default: 40000
     """
 
     def __init__(self, k_range=(2, 15), border_threshold=0.2, verbose=False, random_state=42,
@@ -361,6 +317,7 @@ class Clusterer(BaseEstimator, ClusterMixin):
         Assign clusters to borderline points, according to the borderline_threshold
         specified in the constructor
         """
+
         if self.verbose:
             print ('FINDING hybrid centers of performance...\n')
 
@@ -384,6 +341,7 @@ class Clusterer(BaseEstimator, ClusterMixin):
         """
         Generate a matrix for optimizing the predict function
         """
+
         matrix = {}
         X = []
 
@@ -418,18 +376,15 @@ class Clusterer(BaseEstimator, ClusterMixin):
     def fit(self, player_ids, match_ids, dataframe, y=None, kind='single', filename='clusters'):
         """
         Compute performance clustering.
-
-        Parameters
-        ----------
-            X : array-like or sparse matrix, shape=(n_samples, n_features)
+        
+        :param X: array-like or sparse matrix, shape=(n_samples, n_features)
             Training instances to cluster.
-
-            kind: str
-                single: single cluster
-                multi: multi cluster
-
-            y: ignored
+        :param kind: str
+            single: single cluster
+            multi: multi cluster
+        :param y: ignored
         """
+
         self.kind_ = kind
         X = dataframe.values
 
@@ -474,16 +429,12 @@ class Clusterer(BaseEstimator, ClusterMixin):
         the code book and each value returned by `predict` is the index of
         the closest code in the code book.
 
-        Parameters
-        ----------
-        X : {array-like, sparse matrix}, shape = [n_samples, n_features]
+        :param X: {array-like, sparse matrix}, shape = [n_samples, n_features]
             New data to predict.
-
-        Returns
-        -------
-        multi_labels : array, shape [n_samples,]
+        :return: multi_labels: array, shape [n_samples,]
             Index of the cluster each sample belongs to.
         """
+
         if self.kind_ == 'single':
             return self.kmeans_predict(X)
         else:

@@ -72,6 +72,7 @@ def pre_process(events):
     Duels appear in pairs in the streamflow: one event is by a team and the other by
     the opposing team. This can create
     """
+
     filtered_events, index, prev_event = [], 0, {'teamId': -1}
 
     while index < len(events) - 1:
@@ -100,19 +101,14 @@ def is_interruption(event, current_half):
     a ball our of the field, a whistle by the referee, a fouls, an offside, a goal, the end of the
     first half or the end of the game.
 
-    Parameters
-    ----------
-    event: dict
+    :param event: dict
         a dictionary describing the event
-
-    current_half: str
+    :param current_half: str
         the current half of the match (1H = first half, 2H == second half)
 
-    Returns
-    -------
-    True is the event is an interruption
-    False otherwise
+    :return: True is the event is an interruption, False otherwise
     """
+
     event_id, match_period = event['eventId'], event['matchPeriod']
 
     if event_id in [INTERRUPTION, FOUL, OFFSIDE] or match_period != current_half or event_id == -1:
@@ -132,30 +128,28 @@ def is_shot(event):
     after a shot if the team gains again the ball. We account for this case by looking
     at the next events of the game.
 
-    Parameters
-    ----------
-    event: dict
+    :param event: dict
         a dictionary describing the event
 
-    Returns
-    -------
-    True is the event is a shot
-    False otherwise
+    :return: True is the event is a shot, False otherwise
     """
+
     event_id = event['eventId']
     return event_id == 10 or event["subEventId"] == FREE_KICK_SHOT
 
 
 def is_goal(event):
     """
-    check if it is a goal or own goal. To detect sudden goal form not usual event types (touches acceleration whatever)
+    Check if it is a goal or own goal. To detect sudden goal form not usual event types (touches acceleration whatever)
     """
+
     return GOAL in [tag['id'] for tag in event['tags']] or OWN_GOAL in [tag['id'] for tag in event['tags']]
 
 def is_other(event):
     """
-    check for cleareance and touches
+    Check for cleareance and touches
     """
+
     return event['subEventId'] == TOUCH or event['subEventId'] == CLEARANCE
 
 def is_save_attempt(event):
@@ -179,6 +173,7 @@ def is_ball_lost(event, previous_event):
     """
     note: not considering touch and cleareance as possession event
     """
+
     if previous_event is not None and event['teamId'] != previous_event['teamId'] and previous_event['teamId'] != -2 and event['eventId'] !=1 and event["subEventId"] not in [71,72]:
         return True
 
@@ -209,20 +204,17 @@ def get_play_actions(db, verbose=False):
     Given a list of events of a single match,
     it splits the events
     into possession phases using the following principle:
-
     - an action begins when a team gains ball possession
     - an action ends if one of two cases occurs:
     -- there is interruption of the match, due to: 1) end of first half or match; 2) ball
     out of the field 3) offside 4) foul
     -- ball is played by the opposite team w.r.t. to the team who is owning the ball
-
-    output:
-
-    -- a list, where each item is a tuple including:
+    
+    :return: a list, where each item is a tuple including:
         - event outcome: ball lost | shot | interruption | penalty
         - phase events list
-
     """
+
     try:
 
         events = list(filter(lambda x: x['matchPeriod'] in ['1H', '2H'],db)) #not considering extended time

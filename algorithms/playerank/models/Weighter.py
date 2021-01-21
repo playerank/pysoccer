@@ -12,40 +12,38 @@ import pandas as pd
 import numpy as np
 
 class Weighter(BaseEstimator):
-    """Automatic weighting of performance features
+    """
+    Automatic weighting of performance features
 
-    Parameters
-    ----------
-    label_type: str
-        the label type associated to the game outcome.
-        options: w-dl (victory vs draw or defeat), wd-l (victory or draw vs defeat),
-                 w-d-l (victory, draw, defeat)
-    random_state : int
-        RandomState instance or None, optional, default: None
-        If int, random_state is the seed used by the random number generator;
-        If RandomState instance, random_state is the random number generator;
-        If None, the random number generator is the RandomState instance used
-        by `np.random`.
+    Attributes:
 
-    Attributes
-    ----------
     feature_names_ : array, [n_features]
         names of the features
-    label_type_: str
+    label_type_ : str
         the label type associated to the game outcome.
-        options: w-dl (victory vs draw or defeat), wd-l (victory or draw vs defeat),
-                 w-d-l (victory, draw, defeat)
-    clf_: LinearSVC object
+        options: w-dl (victory vs draw or defeat), wd-l (victory or draw vs defeat), w-d-l (victory, draw, defeat)
+    clf_ : LinearSVC object
         the object of the trained classifier
     weights_ : array, [n_features]
         weights of the features computed by the classifier
-    random_state_: int
+    random_state_ : int
         RandomState instance or None, optional, default: None
         If int, random_state is the seed used by the random number generator;
         If RandomState instance, random_state is the random number generator;
         If None, the random number generator is the RandomState instance used
         by 'np.random'.
+
+    :param label_type: str
+        the label type associated to the game outcome.
+        options: w-dl (victory vs draw or defeat), wd-l (victory or draw vs defeat), w-d-l (victory, draw, defeat)
+    :param random_state: int
+        RandomState instance or None, optional, default: None
+        If int, random_state is the seed used by the random number generator;
+        If RandomState instance, random_state is the random number generator;
+        If None, the random number generator is the RandomState instance used
+        by `np.random`.
     """
+
     def __init__(self, label_type='w-dl', random_state=42):
         self.label_type_ = label_type
         self.random_state_ = random_state
@@ -54,23 +52,18 @@ class Weighter(BaseEstimator):
         """
         Compute weights of features.
 
-        Parameters
-        ----------
-            dataframe : pandas DataFrame
-                a dataframe containing the feature values and the target values
+        :param dataframe: pandas DataFrame
+            a dataframe containing the feature values and the target values
+        :param target: str
+            a string indicating the name of the target variable in the dataframe
+        :param scaled: boolean
+            True if X must be normalized, False otherwise (optional)
+        :param filename: str
+            the name of the files to be saved (the json file containing the feature weights)
+            default: "weights"
 
-            target: str
-               a string indicating the name of the target variable in the dataframe
-
-            scaled: boolean
-                True if X must be normalized, False otherwise
-                (optional)
-
-            filename: str
-                the name of the files to be saved (the json file containing the feature weights,
-                )
-                default: "weights"
         """
+
         ##feature selection by variance, to delete outlier features
         feature_names = list(dataframe.columns)
         # normalize the data and then eliminate the variables with zero variance

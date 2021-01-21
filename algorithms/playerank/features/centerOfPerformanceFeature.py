@@ -1,29 +1,27 @@
-from .abstract import Feature
-from .wyscoutEventsDefinition import *
 import json
 import glob
 import numpy as np
 from collections import defaultdict
 
+from pysoccer.algorithms.playerank.features.abstract import Feature
+from pysoccer.algorithms.playerank.features.wyscoutEventsDefinition import *
+
 class centerOfPerformanceFeature(Feature):
 
 
     def createFeature(self, serialized_events, players_file, select = None):
-
         """
-        compute centerOfPerformanceFeatures
-        parameters:
-        -serialiazed_events: folder path of events file
-        -players_file: file path of players data file
-        -select: function  for filtering matches collection. Default: aggregate over all matches
-        -entity: it could either 'team' or 'player'.
-        It selects the aggregation for qualityFeatures among teams or players qualityfeatures.
-        Note: aggregation by team is exploited during learning phase, for features weights estimation,
-              while aggregation by players is involved for rating phase.
+        Compute centerOfPerformanceFeatures
 
-        Output:
-        list of json docs dictionaries in the format:
-            {matchId : int , entity : int, feature: string , value}
+        :param serialiazed_events: folder path of events file
+        :param players_file: file path of players data file
+        :param select: function  for filtering matches collection. Default: aggregate over all matches
+        :param entity: it could either 'team' or 'player'.
+            It selects the aggregation for qualityFeatures among teams or players qualityfeatures. 
+            Note: aggregation by team is exploited during learning phase, 
+            for features weights estimation, while aggregation by players is involved for rating phase.
+
+        :return: list of json docs dictionaries in the format: {matchId : int , entity : int, feature: string , value}
         """
 
 

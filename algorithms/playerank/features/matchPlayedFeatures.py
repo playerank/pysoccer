@@ -1,5 +1,5 @@
-from .abstract import Feature
-from .wyscoutEventsDefinition import *
+from pysoccer.algorithms.playerank.features.abstract import Feature
+from pysoccer.algorithms.playerank.features.wyscoutEventsDefinition import *
 import json
 import glob
 
@@ -11,18 +11,13 @@ class matchPlayedFeatures(Feature):
         It computes, for each player and match, total time (in minutes) played,
         goals scored and
 
+        :param serialized_matches: folder with json files corresponding to matches data
+        :param select: function  for filtering matches collection. Default: aggregate over all matches
 
-        Input:
-        -serialized_matches: folder with json files corresponding to matches data
-        -select: function  for filtering matches collection. Default: aggregate over all matches
-
-        Output:
-
-        a collection of documents in the f
-        ormat _id-> {'match': this.wyId, 'player' : player,
-        'name': 'minutesPlayed'|'team'|'goalScored'|'timestamp'},value: <float>|<string>;
-
+        :return: a collection of documents in the format _id-> {'match': this.wyId, 'player' : player, 
+            'name': 'minutesPlayed'|'team'|'goalScored'|'timestamp'},value: <float>|<string>;
         """
+
         players =  json.load(open(players_file))
         #  filtering out all the events from goalkeepers
         goalkeepers_ids = [player['wyId'] for player in players

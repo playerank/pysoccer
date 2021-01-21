@@ -1,15 +1,15 @@
-from .abstract import Aggregation
-from .wyscoutEventsDefinition import *
+from pysoccer.algorithms.playerank.features.abstract import Aggregation
+from pysoccer.algorithms.playerank.features.wyscoutEventsDefinition import *
 import json
 import pandas as pd
 from collections import defaultdict
 
 class plainAggregation(Aggregation):
     """
-    merge features for each player and return a data frame
+    Merge features for each player and return a data frame
     match -> team (or entity) -> feature (playerank, timestamp, team, etc..)
-
     """
+    
     def set_features(self,collection_list):
         self.collections=collection_list
 

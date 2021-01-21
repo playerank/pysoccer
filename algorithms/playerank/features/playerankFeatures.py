@@ -1,5 +1,5 @@
-from .abstract import Feature
-from .wyscoutEventsDefinition import *
+from pysoccer.algorithms.playerank.features.abstract import Feature
+from pysoccer.algorithms.playerank.features.wyscoutEventsDefinition import *
 from collections import defaultdict
 import json
 
@@ -8,14 +8,13 @@ class playerankFeatures(Feature):
     """
     Given a method to aggregate features and the corresponding weight of each feature,
     it computes playerank for each player and match
-    input:
-    -- features weights, computed within learning phase of playerank framework
+    
+    :param features weights, computed within learning phase of playerank framework
 
-    output:
-    -- a collection of json documents in the format:
-       {match:match_id, name: 'playerankScore', player:player_id,
-       value: playerankScore(float)}
+    :return: a collection of json documents in the format: 
+        {match:match_id, name: 'playerankScore', player:player_id, value: playerankScore(float)}
     """
+    
     def set_features(self,collection_list):
         self.collections=collection_list
 

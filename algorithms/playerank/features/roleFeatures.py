@@ -1,5 +1,5 @@
-from .abstract import Feature
-from .wyscoutEventsDefinition import *
+from pysoccer.algorithms.playerank.features.abstract import Feature
+from pysoccer.algorithms.playerank.features.wyscoutEventsDefinition import *
 import json
 from collections import defaultdict
 
@@ -12,18 +12,13 @@ class roleFeatures(Feature):
         return self.collections
     def createFeature(self,matrix_role_file):
         """
-        Given the matrix for roles, it computes, for each player and match,
-        the role of a player
-
+        Given the matrix for roles, it computes, for each player and match, the role of a player.
         A role matrix is a data structure where, given x and y (between 0 and 100),
         it contains the correspinding roles for a player having center of performance = x,y
-        Role_matrix is computed within learning phase of playerank framework
+        Role_matrix is computed within learning phase of playerank framework.
 
-        Input:
-        role_matrix: file patch for dictionary in the format x->y->role
-        feature_lists: lists of features for each player in each match, describing
-                       players' average position
-
+        :param role_matrix: file patch for dictionary in the format x->y->role
+        :param feature_lists: lists of features for each player in each match, describing players' average position
         """
 
         role_matrix = json.load(open(matrix_role_file,"r"))

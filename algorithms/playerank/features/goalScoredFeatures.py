@@ -1,23 +1,23 @@
-from .abstract import Feature
-from .wyscoutEventsDefinition import *
 import json
 from collections import defaultdict
 import glob
 
+from pysoccer.algorithms.playerank.features.abstract import Feature
+from pysoccer.algorithms.playerank.features.wyscoutEventsDefinition import *
+
 
 class goalScoredFeatures(Feature):
     """
-    goals scored by each team in each match
+    Goals scored by each team in each match
     """
     def createFeature(self,serialized_matches,select = None):
         """
-        stores qualityFeatures on database
-        parameters:
-        -serialized_matches: file path of matches file
-        -select: function  for filtering matches collection. Default: aggregate over all matches
+        Stores qualityFeatures on database
+        
+        :param serialized_matches: file path of matches file
+        :param select: function  for filtering matches collection. Default: aggregate over all matches
 
-        Output:
-        list of documents in the format: match: matchId, entity: team, feature: feature, value: value
+        :return: list of documents in the format: match: matchId, entity: team, feature: feature, value: value
         """
 
         print("[GoalScored features] added %s matches"%len(serialized_matches))
