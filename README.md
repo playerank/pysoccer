@@ -2,7 +2,7 @@
 
 Pysoccer offers a standardized data model designed to make data-driven soccer analytics easy. It aims to be the base format to build on all the community made analysis and make them comparable and able to "speak the same language". With Pysoccer everyone would be able to, develop its own serializer for its own data streams, and use a massive number of already made analytics tools or build some new ones. The use of the library will also allow to apply well known tools onto new data, that were developed for a different format or type. Possibly now with few changes we can revise most of the soccer analytics tools to work on Pysoccer data.
 
-![Schema of the Pysoccer workflow](Workflow Pysoccer.png)
+![Schema of the Pysoccer workflow](Workflow_Pysoccer.png)
 
 Pysoccer is developed in Python being one of the most used languages at the state-of-the-art. The language was also chosen because it provides a great number of useful libraries for data elaboration and visualization. The library is hosted on GitHub, being completely open source and hoping that it will gain popularity and it will lead to a growing number of functions and tools that uses it. The developing from scratch took about 6 months, during this period weekly meetings were held to discuss about the main design choices.
 
