@@ -83,9 +83,11 @@
               
             
             
-              <p class="caption"><span class="caption-text">Contents:</span></p>
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="what_is.html">What is Pysoccer?</a></li>
+</ul>
 <ul class="current">
-<li class="toctree-l1 current"><a class="reference internal" href="modules.html">pysoccer</a><ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="modules.html">Code Description</a><ul class="current">
 <li class="toctree-l2 current"><a class="reference internal" href="pysoccer.html">pysoccer package</a><ul class="current">
 <li class="toctree-l3 current"><a class="reference internal" href="pysoccer.html#subpackages">Subpackages</a><ul class="current">
 <li class="toctree-l4"><a class="reference internal" href="pysoccer.algorithms.html">pysoccer.algorithms package</a></li>
@@ -150,7 +152,7 @@
     
       <li><a href="index.html" class="icon icon-home"></a> &raquo;</li>
         
-          <li><a href="modules.html">pysoccer</a> &raquo;</li>
+          <li><a href="modules.html">Code Description</a> &raquo;</li>
         
           <li><a href="pysoccer.html">pysoccer package</a> &raquo;</li>
         
@@ -451,17 +453,20 @@ formation attributes.</p>
 <code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">get_play_actions</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">db</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.get_play_actions" title="Permalink to this definition">¶</a></dt>
 <dd><p>Given a list of events of a single match,
 it splits the events
-into possession phases using the following principle:
-- an action begins when a team gains ball possession
-- an action ends if one of two cases occurs:
-– there is interruption of the match, due to: 1) end of first half or match; 2) ball
+into possession phases using the following principle:</p>
+<ul class="simple">
+<li><p>an action begins when a team gains ball possession</p></li>
+<li><p>an action ends if one of two cases occurs:</p></li>
+</ul>
+<p>– there is interruption of the match, due to: 1) end of first half or match; 2) ball
 out of the field 3) offside 4) foul
 – ball is played by the opposite team w.r.t. to the team who is owning the ball</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>a list, where each item is a tuple including:
-- event outcome: ball lost | shot | interruption | penalty
-- phase events list</p>
+<p>output:</p>
+<dl class="simple">
+<dt>– a list, where each item is a tuple including:</dt><dd><ul class="simple">
+<li><p>event outcome: ball lost | shot | interruption | penalty</p></li>
+<li><p>phase events list</p></li>
+</ul>
 </dd>
 </dl>
 </dd></dl>
@@ -490,7 +495,7 @@ out of the field 3) offside 4) foul
 <dl class="py function">
 <dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_goal">
 <code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_goal</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_goal" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check if it is a goal or own goal. To detect sudden goal form not usual event types (touches acceleration whatever)</p>
+<dd><p>check if it is a goal or own goal. To detect sudden goal form not usual event types (touches acceleration whatever)</p>
 </dd></dl>
 
 <dl class="py function">
@@ -502,14 +507,16 @@ first half or the end of the game.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>event</strong> – dict
-a dictionary describing the event</p></li>
-<li><p><strong>current_half</strong> – str
-the current half of the match (1H = first half, 2H == second half)</p></li>
+<li><p><strong>event</strong> (<em>dict</em>) – a dictionary describing the event</p></li>
+<li><p><strong>current_half</strong> (<em>str</em>) – the current half of the match (1H = first half, 2H == second half)</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True is the event is an interruption, False otherwise</p>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>True is the event is an interruption</em></p></li>
+<li><p><em>False otherwise</em></p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -517,7 +524,7 @@ the current half of the match (1H = first half, 2H == second half)</p></li>
 <dl class="py function">
 <dt id="pysoccer.serializers.WyscoutSerializer.phaseDetection.is_other">
 <code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseDetection.</code><code class="sig-name descname">is_other</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">event</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseDetection.is_other" title="Permalink to this definition">¶</a></dt>
-<dd><p>Check for cleareance and touches</p>
+<dd><p>check for cleareance and touches</p>
 </dd></dl>
 
 <dl class="py function">
@@ -548,11 +555,14 @@ after a shot if the team gains again the ball. We account for this case by looki
 at the next events of the game.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>event</strong> – dict
-a dictionary describing the event</p>
+<dd class="field-odd"><p><strong>event</strong> (<em>dict</em>) – a dictionary describing the event</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>True is the event is a shot, False otherwise</p>
+<dd class="field-even"><p><ul class="simple">
+<li><p><em>True is the event is a shot</em></p></li>
+<li><p><em>False otherwise</em></p></li>
+</ul>
+</p>
 </dd>
 </dl>
 </dd></dl>
@@ -594,15 +604,10 @@ the opposing team. This can create</p>
 <dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.d">
 <code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">d</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">start</span></em>, <em class="sig-param"><span class="n">stop</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.d" title="Permalink to this definition">¶</a></dt>
 <dd><p>angular distance difference between start ant stop events
-we consider first position as event position</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>start</strong> – event positions</p></li>
-<li><p><strong>stop</strong> – event positions</p></li>
-</ul>
-</dd>
-</dl>
+we consider first position as event position
+input:
+– start: event positions
+– stop: event positions</p>
 </dd></dl>
 
 <dl class="py function">
@@ -628,14 +633,9 @@ duels on 3d third: n. of passess conceded with origin x in [0,33]</p>
 <dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.expected_goals">
 <code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">expected_goals</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em>, <em class="sig-param"><span class="n">model</span></em>, <em class="sig-param"><span class="n">label_encoder</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.expected_goals" title="Permalink to this definition">¶</a></dt>
 <dd><p>computing expected goals for a phase according to input model</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>phase</strong> – phase object, tuple</p></li>
-<li><p><strong>model</strong> – sklearn model</p></li>
-</ul>
-</dd>
-</dl>
+<p>Input:</p>
+<p>phase: phase object, tuple
+model: sklearn model</p>
 </dd></dl>
 
 <dl class="py function">
@@ -662,16 +662,11 @@ it is the closest point, w.r.t. opponents goal, where the possessing team manage
 <dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.last_ball_location">
 <code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">last_ball_location</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">shot</span></em>, <em class="sig-param"><span class="n">prev_events</span></em>, <em class="sig-param"><span class="n">time_window</span><span class="o">=</span><span class="default_value">3</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.last_ball_location" title="Permalink to this definition">¶</a></dt>
 <dd><p>it computes the average distance from shots location to previous &lt;time_window&gt; events.
-it could be useful to distinguish among high and low pressure situation</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>shot</strong> – a shot event</p></li>
-<li><p><strong>prev_Events</strong> – a list of previous events</p></li>
-<li><p><strong>time_window</strong> – previous time window to consider (in seconds)</p></li>
-</ul>
-</dd>
-</dl>
+it could be useful to distinguish among high and low pressure situation
+Input
+shot: a shot event
+prev_Events: a list of previous events
+time_window: previous time window to consider (in seconds)</p>
 </dd></dl>
 
 <dl class="py function">
@@ -744,15 +739,12 @@ Segments are computed according to the duration</p>
 <dl class="py function">
 <dt id="pysoccer.serializers.WyscoutSerializer.phaseFeatures.timestamp">
 <code class="sig-prename descclassname">pysoccer.serializers.WyscoutSerializer.phaseFeatures.</code><code class="sig-name descname">timestamp</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">phase</span></em>, <em class="sig-param"><span class="n">offset</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.serializers.WyscoutSerializer.phaseFeatures.timestamp" title="Permalink to this definition">¶</a></dt>
-<dd><p>return the absolute timestamp of the first event of the phase</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>phase</strong> – a list of events corresponding to a possesion phase</p></li>
-<li><p><strong>offest</strong> – dictionary with offset for each period of the match</p></li>
-</ul>
-</dd>
-</dl>
+<dd><p>return the absolute timestamp of the first event of the phase
+input:</p>
+<blockquote>
+<div><p>phase: a list of events corresponding to a possesion phase
+offest: dictionary with offset for each period of the match</p>
+</div></blockquote>
 </dd></dl>
 
 </div>

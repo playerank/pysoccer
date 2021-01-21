@@ -192,56 +192,112 @@
 <em class="property">class </em><code class="sig-prename descclassname">pysoccer.algorithms.playerank.models.Clusterer.</code><code class="sig-name descname">Clusterer</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">k_range</span><span class="o">=</span><span class="default_value">(2, 15)</span></em>, <em class="sig-param"><span class="n">border_threshold</span><span class="o">=</span><span class="default_value">0.2</span></em>, <em class="sig-param"><span class="n">verbose</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">42</span></em>, <em class="sig-param"><span class="n">sample_size</span><span class="o">=</span><span class="default_value">None</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code>, <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.ClusterMixin</span></code></p>
 <p>Performance clustering</p>
-<p>Attributes:</p>
-<dl class="simple">
-<dt><a href="#id1"><span class="problematic" id="id2">cluster_centers_</span></a><span class="classifier">array, [n_clusters, n_features]</span></dt><dd><p>Coordinates of cluster centers</p>
-</dd>
-<dt><a href="#id3"><span class="problematic" id="id4">n_clusters_</span></a><span class="classifier">int</span></dt><dd><p>number of clusters found by the algorithm</p>
-</dd>
-<dt><a href="#id5"><span class="problematic" id="id6">labels_</span></a></dt><dd><p>Labels of each point</p>
-</dd>
-<dt>k_range<span class="classifier">tuple</span></dt><dd><p>minimum and maximum number of clusters to try</p>
-</dd>
-<dt>verbose<span class="classifier">boolean</span></dt><dd><p>whether or not to show details of the execution</p>
-</dd>
-<dt>random_state<span class="classifier">int</span></dt><dd><p>RandomState instance or None, optional, default: None
-If int, random_state is the seed used by the random number generator;
-If RandomState instance, random_state is the random number generator;
-If None, the random number generator is the RandomState instance used
-by ‘np.random’.</p>
-</dd>
-<dt>sample_size</dt><dd><p>None</p>
-</dd>
-<dt>kmeans<span class="classifier">scikit-learn KMeans object</span></dt><dd><p>None</p>
-</dd>
-</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>k_range</strong> – tuple (pair)
-the minimum and the maximum $k$ to try when choosing the best value of $k$
+<li><p><strong>k_range</strong> (<em>tuple</em><em> (</em><em>pair</em><em>)</em>) – the minimum and the maximum $k$ to try when choosing the best value of $k$
 (the one having the best silhouette score)</p></li>
-<li><p><strong>border_threshold</strong> – float
-the threshold to use for selecting the borderline.
+<li><p><strong>border_threshold</strong> (<em>float</em>) – the threshold to use for selecting the borderline.
 It indicates the max silhouette for a borderline point.</p></li>
-<li><p><strong>verbose</strong> – boolean
-verbosity mode.
+<li><p><strong>verbose</strong> (<em>boolean</em>) – verbosity mode.
 default: False</p></li>
-<li><p><strong>random_state</strong> – int
-RandomState instance or None, optional, default: None
+<li><p><strong>random_state</strong> (<em>int</em>) – RandomState instance or None, optional, default: None
 If int, random_state is the seed used by the random number generator;
 If RandomState instance, random_state is the random number generator;
 If None, the random number generator is the RandomState instance used
 by <cite>np.random</cite>.</p></li>
-<li><p><strong>sample_size</strong> – int
-the number of samples (rows) that must be used when computing the silhouette score (the function silhouette_score is computationally expensive and generates a Memory Error when the number of samples is too high)
+<li><p><strong>sample_size</strong> (<em>int</em>) – the number of samples (rows) that must be used when computing the silhouette score (the function silhouette_score is computationally expensive and generates a Memory Error when the number of samples is too high)
 default: 10000</p></li>
-<li><p><strong>max_rows</strong> – int
-the maximum number of samples (rows) to be considered for the clustering task (the function silhouette_samples is computationally expensive and generates a Memory Error when the input matrix have too many rows)
+<li><p><strong>max_rows</strong> (<em>int</em>) – the maximum number of samples (rows) to be considered for the clustering task (the function silhouette_samples is computationally expensive and generates a Memory Error when the input matrix have too many rows)
 default: 40000</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Clusterer.Clusterer.cluster_centers_">
+<code class="sig-name descname">cluster_centers_</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer.cluster_centers_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Coordinates of cluster centers</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>array, [n_clusters, n_features]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Clusterer.Clusterer.n_clusters_">
+<code class="sig-name descname">n_clusters_</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer.n_clusters_" title="Permalink to this definition">¶</a></dt>
+<dd><p>number of clusters found by the algorithm</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Clusterer.Clusterer.labels_">
+<code class="sig-name descname">labels_</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer.labels_" title="Permalink to this definition">¶</a></dt>
+<dd><p>Labels of each point</p>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Clusterer.Clusterer.k_range">
+<code class="sig-name descname">k_range</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer.k_range" title="Permalink to this definition">¶</a></dt>
+<dd><p>minimum and maximum number of clusters to try</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>tuple</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Clusterer.Clusterer.verbose">
+<code class="sig-name descname">verbose</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer.verbose" title="Permalink to this definition">¶</a></dt>
+<dd><p>whether or not to show details of the execution</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>boolean</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Clusterer.Clusterer.random_state">
+<code class="sig-name descname">random_state</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer.random_state" title="Permalink to this definition">¶</a></dt>
+<dd><p>RandomState instance or None, optional, default: None
+If int, random_state is the seed used by the random number generator;
+If RandomState instance, random_state is the random number generator;
+If None, the random number generator is the RandomState instance used
+by ‘np.random’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Clusterer.Clusterer.sample_size">
+<code class="sig-name descname">sample_size</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer.sample_size" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>None</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Clusterer.Clusterer.kmeans">
+<code class="sig-name descname">kmeans</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer.kmeans" title="Permalink to this definition">¶</a></dt>
+<dd><dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>scikit-learn KMeans object</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt id="pysoccer.algorithms.playerank.models.Clusterer.Clusterer.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">player_ids</span></em>, <em class="sig-param"><span class="n">match_ids</span></em>, <em class="sig-param"><span class="n">dataframe</span></em>, <em class="sig-param"><span class="n">y</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">kind</span><span class="o">=</span><span class="default_value">'single'</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'clusters'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.Clusterer.fit" title="Permalink to this definition">¶</a></dt>
@@ -249,12 +305,11 @@ default: 40000</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> – array-like or sparse matrix, shape=(n_samples, n_features)
-Training instances to cluster.</p></li>
-<li><p><strong>kind</strong> – str
-single: single cluster
+<li><p><strong>X</strong> (<em>array-like</em><em> or </em><em>sparse matrix</em><em>, </em><em>shape=</em><em>(</em><em>n_samples</em><em>, </em><em>n_features</em><em>)</em>) – </p></li>
+<li><p><strong>instances to cluster.</strong> (<em>Training</em>) – </p></li>
+<li><p><strong>kind</strong> (<em>str</em>) – single: single cluster
 multi: multi cluster</p></li>
-<li><p><strong>y</strong> – ignored</p></li>
+<li><p><strong>y</strong> (<em>ignored</em>) – </p></li>
 </ul>
 </dd>
 </dl>
@@ -274,12 +329,13 @@ the code book and each value returned by <cite>predict</cite> is the index of
 the closest code in the code book.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>X</strong> – {array-like, sparse matrix}, shape = [n_samples, n_features]
-New data to predict.</p>
+<dd class="field-odd"><p><strong>X</strong> (<em>{array-like</em><em>, </em><em>sparse matrix}</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>, </em><em>n_features</em><em>]</em>) – New data to predict.</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>multi_labels: array, shape [n_samples,]
-Index of the cluster each sample belongs to.</p>
+<dd class="field-even"><p><strong>multi_labels</strong> – Index of the cluster each sample belongs to.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array, shape [n_samples,]</p>
 </dd>
 </dl>
 </dd></dl>
@@ -293,41 +349,41 @@ Index of the cluster each sample belongs to.</p>
 is a measure of how well samples are clustered with samples that are similar to themselves.
 Clustering models with a high Silhouette Coefficient are said to be dense,
 where samples in the same cluster are similar to each other, and well separated,
-where samples in different clusters are not very similar to each other.
-The Silhouette Coefficient is calculated using the mean intra-cluster
-distance (a) and the mean nearest-cluster distance (b) for each sample.
-The Silhouette Coefficient for a sample is $(b - a) / max(a, b)$.
+where samples in different clusters are not very similar to each other.</p>
+<p>The Silhouette Coefficient is calculated using the mean intra-cluster
+distance (a) and the mean nearest-cluster distance (b) for each sample.</p>
+<p>The Silhouette Coefficient for a sample is $(b - a) / max(a, b)$.
 This function returns the Silhoeutte Coefficient for each sample.
 The best value is 1 and the worst value is -1. Values near 0 indicate
 overlapping clusters.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> – array [n_samples_a, n_features]
-Feature array.</p></li>
-<li><p><strong>labels</strong> – array, shape = [n_samples]
-label values for each sample</p></li>
-<li><p><strong>metric</strong> – string, or callable
-The metric to use when calculating distance between instances in a
+<li><p><strong>X</strong> (<em>array</em><em> [</em><em>n_samples_a</em><em>, </em><em>n_features</em><em>]</em>) – Feature array.</p></li>
+<li><p><strong>labels</strong> (<em>array</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – label values for each sample</p></li>
+<li><p><strong>metric</strong> (<em>string</em><em>, or </em><em>callable</em>) – The metric to use when calculating distance between instances in a
 feature array. If metric is a string, it must be one of the options
 allowed by metrics.pairwise.pairwise_distances. If X is the distance
 array itself, use “precomputed” as the metric.</p></li>
-<li><p><strong>**kwds</strong> – optional keyword parameters
-Any further parameters are passed directly to the distance function.
+<li><p><strong>**kwds</strong> (<em>optional keyword parameters</em>) – Any further parameters are passed directly to the distance function.
 If using a scipy.spatial.distance metric, the parameters are still
 metric dependent. See the scipy docs for usage examples.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>silhouette : array, shape = [n_samples]
-Silhouette Coefficient for each samples.</p>
+<dd class="field-even"><p><strong>silhouette</strong> – Silhouette Coefficient for each samples.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>array, shape = [n_samples]</p>
 </dd>
 </dl>
-<p>References
-Peter J. Rousseeuw (1987). “Silhouettes: a Graphical Aid to the
-Interpretation and Validation of Cluster Analysis”. Computational
-and Applied Mathematics 20: 53-65. doi:10.1016/0377-0427(87)90125-7.
-http://en.wikipedia.org/wiki/Silhouette_(clustering)</p>
+<p class="rubric">References</p>
+<dl class="simple">
+<dt>Peter J. Rousseeuw (1987). “Silhouettes: a Graphical Aid to the</dt><dd><p>Interpretation and Validation of Cluster Analysis”. Computational
+and Applied Mathematics 20: 53-65. doi:10.1016/0377-0427(87)90125-7.</p>
+</dd>
+</dl>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Silhouette_(clustering">http://en.wikipedia.org/wiki/Silhouette_(clustering</a>)</p>
 </dd></dl>
 
 <dl class="py function">
@@ -335,50 +391,48 @@ http://en.wikipedia.org/wiki/Silhouette_(clustering)</p>
 <code class="sig-prename descclassname">pysoccer.algorithms.playerank.models.Clusterer.</code><code class="sig-name descname">scalable_silhouette_score</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">X</span></em>, <em class="sig-param"><span class="n">labels</span></em>, <em class="sig-param"><span class="n">metric</span><span class="o">=</span><span class="default_value">'euclidean'</span></em>, <em class="sig-param"><span class="n">sample_size</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">None</span></em>, <em class="sig-param"><span class="n">n_jobs</span><span class="o">=</span><span class="default_value">1</span></em>, <em class="sig-param"><span class="o">**</span><span class="n">kwds</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Clusterer.scalable_silhouette_score" title="Permalink to this definition">¶</a></dt>
 <dd><p>Compute the mean Silhouette Coefficient of all samples.
 The Silhouette Coefficient is compute using the mean intra-cluster distance (a)
-and the mean nearest-cluster distance (b) for each sample.
-The Silhouette Coefficient for a sample is $(b - a) / max(a, b)$.
+and the mean nearest-cluster distance (b) for each sample.</p>
+<p>The Silhouette Coefficient for a sample is $(b - a) / max(a, b)$.
 To clarify, b is the distance between a sample and the nearest cluster
-that b is not a part of.
-This function returns the mean Silhoeutte Coefficient over all samples.
-To obtain the values for each sample, it uses silhouette_samples.
-The best value is 1 and the worst value is -1. Values near 0 indicate
+that b is not a part of.</p>
+<p>This function returns the mean Silhoeutte Coefficient over all samples.
+To obtain the values for each sample, it uses silhouette_samples.</p>
+<p>The best value is 1 and the worst value is -1. Values near 0 indicate
 overlapping clusters. Negative values generally indicate that a sample has
 been assigned to the wrong cluster, as a different cluster is more similar.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>X</strong> – array [n_samples_a, n_features]
-the Feature array.</p></li>
-<li><p><strong>labels</strong> – array, shape = [n_samples]
-label values for each sample</p></li>
-<li><p><strong>metric</strong> – string, or callable
-The metric to use when calculating distance between instances in a
+<li><p><strong>X</strong> (<em>array</em><em> [</em><em>n_samples_a</em><em>, </em><em>n_features</em><em>]</em>) – the Feature array.</p></li>
+<li><p><strong>labels</strong> (<em>array</em><em>, </em><em>shape =</em><em> [</em><em>n_samples</em><em>]</em>) – label values for each sample</p></li>
+<li><p><strong>metric</strong> (<em>string</em><em>, or </em><em>callable</em>) – The metric to use when calculating distance between instances in a
 feature array. If metric is a string, it must be one of the options
 allowed by metrics.pairwise.pairwise_distances. If X is the distance
 array itself, use “precomputed” as the metric.</p></li>
-<li><p><strong>sample_size</strong> – int or None
-The size of the sample to use when computing the Silhouette
+<li><p><strong>sample_size</strong> (<em>int</em><em> or </em><em>None</em>) – The size of the sample to use when computing the Silhouette
 Coefficient. If sample_size is None, no sampling is used.</p></li>
-<li><p><strong>random_state</strong> – integer or numpy.RandomState, optional
-The generator used to initialize the centers. If an integer is
+<li><p><strong>random_state</strong> (<em>integer</em><em> or </em><em>numpy.RandomState</em><em>, </em><em>optional</em>) – The generator used to initialize the centers. If an integer is
 given, it fixes the seed. Defaults to the global numpy random
 number generator.</p></li>
-<li><p><strong>**kwds</strong> – optional keyword parameters
-Any further parameters are passed directly to the distance function.
+<li><p><strong>**kwds</strong> (<em>optional keyword parameters</em>) – Any further parameters are passed directly to the distance function.
 If using a scipy.spatial.distance metric, the parameters are still
 metric dependent. See the scipy docs for usage examples.</p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>silhouette: float
-the Mean Silhouette Coefficient for all samples.</p>
+<dd class="field-even"><p><strong>silhouette</strong> – the Mean Silhouette Coefficient for all samples.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>float</p>
 </dd>
 </dl>
-<p>References
-Peter J. Rousseeuw (1987). “Silhouettes: a Graphical Aid to the
-Interpretation and Validation of Cluster Analysis”. Computational
-and Applied Mathematics 20: 53-65. doi:10.1016/0377-0427(87)90125-7.
-http://en.wikipedia.org/wiki/Silhouette_(clustering)</p>
+<p class="rubric">References</p>
+<dl class="simple">
+<dt>Peter J. Rousseeuw (1987). “Silhouettes: a Graphical Aid to the</dt><dd><p>Interpretation and Validation of Cluster Analysis”. Computational
+and Applied Mathematics 20: 53-65. doi:10.1016/0377-0427(87)90125-7.</p>
+</dd>
+</dl>
+<p><a class="reference external" href="http://en.wikipedia.org/wiki/Silhouette_(clustering">http://en.wikipedia.org/wiki/Silhouette_(clustering</a>)</p>
 </dd></dl>
 
 </div>
@@ -389,18 +443,23 @@ http://en.wikipedia.org/wiki/Silhouette_(clustering)</p>
 <em class="property">class </em><code class="sig-prename descclassname">pysoccer.algorithms.playerank.models.Rater.</code><code class="sig-name descname">Rater</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">alpha_goal</span><span class="o">=</span><span class="default_value">0.0</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Rater.Rater" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">object</span></code></p>
 <p>Performance rating</p>
-<p>Attributes:</p>
-<dl class="simple">
-<dt><a href="#id7"><span class="problematic" id="id8">ratings_</span></a><span class="classifier">numpy array</span></dt><dd><p>the ratings of the performances</p>
-</dd>
-</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>alpha_goal</strong> – float
-importance of the goal in the evaluation of performance, in the range [0, 1]
+<dd class="field-odd"><p><strong>alpha_goal</strong> (<em>float</em>) – importance of the goal in the evaluation of performance, in the range [0, 1]
 default=0.0</p>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Rater.Rater.ratings_">
+<code class="sig-name descname">ratings_</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Rater.Rater.ratings_" title="Permalink to this definition">¶</a></dt>
+<dd><p>the ratings of the performances</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>numpy array</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt id="pysoccer.algorithms.playerank.models.Rater.Rater.get_rating">
 <code class="sig-name descname">get_rating</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">weighted_sum</span></em>, <em class="sig-param"><span class="n">goals</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Rater.Rater.get_rating" title="Permalink to this definition">¶</a></dt>
@@ -413,13 +472,16 @@ default=0.0</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataframe</strong> – dataframe of playerank scores</p></li>
-<li><p><strong>goal_feature</strong> – column name for goal scored dataframe column</p></li>
-<li><p><strong>score_feature</strong> – column name for playerank score dataframe column</p></li>
+<li><p><strong>dataframe</strong> (<em>dataframe of playerank scores</em>) – </p></li>
+<li><p><strong>goal_feature</strong> (<em>column name for goal scored dataframe column</em>) – </p></li>
+<li><p><strong>score_feature</strong> (<em>column name for playerank score dataframe column</em>) – </p></li>
 </ul>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p><a href="#id9"><span class="problematic" id="id10">ratings_</span></a>: numpy array</p>
+<dd class="field-even"><p><strong>ratings_</strong></p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>numpy array</p>
 </dd>
 </dl>
 </dd></dl>
@@ -434,32 +496,16 @@ default=0.0</p>
 <em class="property">class </em><code class="sig-prename descclassname">pysoccer.algorithms.playerank.models.Weighter.</code><code class="sig-name descname">Weighter</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">label_type</span><span class="o">=</span><span class="default_value">'w-dl'</span></em>, <em class="sig-param"><span class="n">random_state</span><span class="o">=</span><span class="default_value">42</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Weighter.Weighter" title="Permalink to this definition">¶</a></dt>
 <dd><p>Bases: <code class="xref py py-class docutils literal notranslate"><span class="pre">sklearn.base.BaseEstimator</span></code></p>
 <p>Automatic weighting of performance features</p>
-<p>Attributes:</p>
-<dl class="simple">
-<dt><a href="#id11"><span class="problematic" id="id12">feature_names_</span></a><span class="classifier">array, [n_features]</span></dt><dd><p>names of the features</p>
-</dd>
-<dt><a href="#id13"><span class="problematic" id="id14">label_type_</span></a><span class="classifier">str</span></dt><dd><p>the label type associated to the game outcome.
-options: w-dl (victory vs draw or defeat), wd-l (victory or draw vs defeat), w-d-l (victory, draw, defeat)</p>
-</dd>
-<dt><a href="#id15"><span class="problematic" id="id16">clf_</span></a><span class="classifier">LinearSVC object</span></dt><dd><p>the object of the trained classifier</p>
-</dd>
-<dt><a href="#id17"><span class="problematic" id="id18">weights_</span></a><span class="classifier">array, [n_features]</span></dt><dd><p>weights of the features computed by the classifier</p>
-</dd>
-<dt><a href="#id19"><span class="problematic" id="id20">random_state_</span></a><span class="classifier">int</span></dt><dd><p>RandomState instance or None, optional, default: None
-If int, random_state is the seed used by the random number generator;
-If RandomState instance, random_state is the random number generator;
-If None, the random number generator is the RandomState instance used
-by ‘np.random’.</p>
-</dd>
-</dl>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>label_type</strong> – str
-the label type associated to the game outcome.
-options: w-dl (victory vs draw or defeat), wd-l (victory or draw vs defeat), w-d-l (victory, draw, defeat)</p></li>
-<li><p><strong>random_state</strong> – int
-RandomState instance or None, optional, default: None
+<li><p><strong>label_type</strong> (<em>str</em>) – <p>the label type associated to the game outcome.
+options: w-dl (victory vs draw or defeat), wd-l (victory or draw vs defeat),</p>
+<blockquote>
+<div><p>w-d-l (victory, draw, defeat)</p>
+</div></blockquote>
+</p></li>
+<li><p><strong>random_state</strong> (<em>int</em>) – RandomState instance or None, optional, default: None
 If int, random_state is the seed used by the random number generator;
 If RandomState instance, random_state is the random number generator;
 If None, the random number generator is the RandomState instance used
@@ -467,6 +513,69 @@ by <cite>np.random</cite>.</p></li>
 </ul>
 </dd>
 </dl>
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Weighter.Weighter.feature_names_">
+<code class="sig-name descname">feature_names_</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Weighter.Weighter.feature_names_" title="Permalink to this definition">¶</a></dt>
+<dd><p>names of the features</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>array, [n_features]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Weighter.Weighter.label_type_">
+<code class="sig-name descname">label_type_</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Weighter.Weighter.label_type_" title="Permalink to this definition">¶</a></dt>
+<dd><p>the label type associated to the game outcome.
+options: w-dl (victory vs draw or defeat), wd-l (victory or draw vs defeat),</p>
+<blockquote>
+<div><p>w-d-l (victory, draw, defeat)</p>
+</div></blockquote>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Weighter.Weighter.clf_">
+<code class="sig-name descname">clf_</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Weighter.Weighter.clf_" title="Permalink to this definition">¶</a></dt>
+<dd><p>the object of the trained classifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>LinearSVC object</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Weighter.Weighter.weights_">
+<code class="sig-name descname">weights_</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Weighter.Weighter.weights_" title="Permalink to this definition">¶</a></dt>
+<dd><p>weights of the features computed by the classifier</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>array, [n_features]</p>
+</dd>
+</dl>
+</dd></dl>
+
+<dl class="py attribute">
+<dt id="pysoccer.algorithms.playerank.models.Weighter.Weighter.random_state_">
+<code class="sig-name descname">random_state_</code><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Weighter.Weighter.random_state_" title="Permalink to this definition">¶</a></dt>
+<dd><p>RandomState instance or None, optional, default: None
+If int, random_state is the seed used by the random number generator;
+If RandomState instance, random_state is the random number generator;
+If None, the random number generator is the RandomState instance used
+by ‘np.random’.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Type</dt>
+<dd class="field-odd"><p>int</p>
+</dd>
+</dl>
+</dd></dl>
+
 <dl class="py method">
 <dt id="pysoccer.algorithms.playerank.models.Weighter.Weighter.fit">
 <code class="sig-name descname">fit</code><span class="sig-paren">(</span><em class="sig-param"><span class="n">dataframe</span></em>, <em class="sig-param"><span class="n">target</span></em>, <em class="sig-param"><span class="n">scaled</span><span class="o">=</span><span class="default_value">False</span></em>, <em class="sig-param"><span class="n">var_threshold</span><span class="o">=</span><span class="default_value">0.001</span></em>, <em class="sig-param"><span class="n">filename</span><span class="o">=</span><span class="default_value">'weights.json'</span></em><span class="sig-paren">)</span><a class="headerlink" href="#pysoccer.algorithms.playerank.models.Weighter.Weighter.fit" title="Permalink to this definition">¶</a></dt>
@@ -474,14 +583,12 @@ by <cite>np.random</cite>.</p></li>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
 <dd class="field-odd"><ul class="simple">
-<li><p><strong>dataframe</strong> – pandas DataFrame
-a dataframe containing the feature values and the target values</p></li>
-<li><p><strong>target</strong> – str
-a string indicating the name of the target variable in the dataframe</p></li>
-<li><p><strong>scaled</strong> – boolean
-True if X must be normalized, False otherwise (optional)</p></li>
-<li><p><strong>filename</strong> – str
-the name of the files to be saved (the json file containing the feature weights)
+<li><p><strong>dataframe</strong> (<em>pandas DataFrame</em>) – a dataframe containing the feature values and the target values</p></li>
+<li><p><strong>target</strong> (<em>str</em>) – a string indicating the name of the target variable in the dataframe</p></li>
+<li><p><strong>scaled</strong> (<em>boolean</em>) – True if X must be normalized, False otherwise
+(optional)</p></li>
+<li><p><strong>filename</strong> (<em>str</em>) – the name of the files to be saved (the json file containing the feature weights,
+)
 default: “weights”</p></li>
 </ul>
 </dd>
