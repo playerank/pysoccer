@@ -1,6 +1,6 @@
 # Pysoccer
 
-[Full documentation](https://pysoccer.readthedocs.io/en/latest/)
+You can find the full documentation [here!](https://pysoccer.readthedocs.io/en/latest/)
 
 Pysoccer offers a standardized data model designed to make data-driven soccer analytics easy. It aims to be the base format to build on all the community made analysis and make them comparable and able to "speak the same language". With Pysoccer everyone would be able to, develop its own serializer for its own data streams, and use a massive number of already made analytics tools or build some new ones. The use of the library will also allow to apply well known tools onto new data, that were developed for a different format or type. Possibly now with few changes we can revise most of the soccer analytics tools to work on Pysoccer data.
 
