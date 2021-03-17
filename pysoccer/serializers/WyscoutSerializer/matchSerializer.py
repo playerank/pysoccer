@@ -47,6 +47,7 @@ class WyscoutMatchSerializer(MatchSerializer):
             red_cards = player['redCards'],
             own_goals = player['ownGoals'],
             goals = player['goals']
+            shirt_number = player['shirtNumber']
         )
         return plr
 
