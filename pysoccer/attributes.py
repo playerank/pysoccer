@@ -35,6 +35,7 @@ class Player():
     Class defining a soccer player.
     """
     player_id: int
+    shirt_number : int
     played_minutes: int
     yellow_cards: int
     red_cards: int
